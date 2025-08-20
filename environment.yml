@@ -1,0 +1,35 @@
+name: tprm
+channels:
+  - conda-forge
+dependencies:
+  # Core
+  - python=3.11
+  - fastapi
+  - uvicorn
+  - httpx
+  - pydantic >=2
+  - lxml
+  - beautifulsoup4
+  - trafilatura
+  - dnspython
+  - cryptography
+  - jinja2
+  - python-dotenv
+  - pip
+
+  # PDF tooling
+  - pypdf
+  - pdfplumber
+
+  # Optional: better dev server experience (hot reload, websockets, perf)
+  - watchfiles        # used by uvicorn --reload
+  - websockets
+  - httptools
+  # - uvloop          # macOS/Linux only; comment out on Windows
+
+  # Cloud SDK (S3/R2 in future)
+  - boto3
+
+  # If openai is unavailable in your conda mirror, install via pip below.
+  - pip:
+      - openai
